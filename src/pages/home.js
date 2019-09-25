@@ -4,7 +4,8 @@ import MoviesByCategories from '../containers/movies-by-categories';
 export default function Home() {
   const categories = [
     { title: 'Now Playing', category: 'now_playing' },
-    { title: 'Upcoming', category: 'upcoming' }
+    { title: 'Upcoming', category: 'upcoming' },
+    { title: 'Popular', category: 'popular' }
   ];
 
   return (

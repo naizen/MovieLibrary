@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavbarSearch from '../containers/navbar-search';
+import { MdMovie } from 'react-icons/md';
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -9,7 +10,20 @@ export default function Navbar() {
       <div className="container">
         <div className="col-3">
           <a className="navbar-brand" href="/">
-            movielibrary
+            <MdMovie
+              size={24}
+              color="rgba(0,0,0,0.6)"
+              style={{ marginRight: 5 }}
+            />
+            <span
+              style={{
+                fontWeight: 500,
+                color: 'rgba(0,0,0,0.8)',
+                verticalAlign: 'middle'
+              }}
+            >
+              Movie Library
+            </span>
           </a>
         </div>
         <button
