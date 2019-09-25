@@ -3,6 +3,7 @@ import Carousel from 'nuka-carousel';
 import MovieThumbnail from './movie-thumbnail';
 import CarouselNextButton from './carousel-next-button';
 import CarouselPrevButton from './carousel-prev-button';
+import styled from '@emotion/styled';
 
 const getSlidesToShow = () => {
   let slidesToShow = 3;
@@ -12,9 +13,15 @@ const getSlidesToShow = () => {
   return slidesToShow;
 };
 
+const StyledCarousel = styled(Carousel)`
+  .slider-list {
+    min-height: 400px;
+  }
+`;
+
 export default function MovieCarousel({ movies }) {
   return (
-    <Carousel
+    <StyledCarousel
       slidesToShow={getSlidesToShow()}
       slidesToScroll={3}
       cellSpacing={20}
@@ -25,6 +32,6 @@ export default function MovieCarousel({ movies }) {
       {movies.map(movie => (
         <MovieThumbnail movie={movie} key={movie.id} />
       ))}
-    </Carousel>
+    </StyledCarousel>
   );
 }

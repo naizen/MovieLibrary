@@ -26,7 +26,7 @@ export default function NavbarSearch() {
     if (data && data.searchMovies) {
       setSuggestions(data.searchMovies);
     }
-  }, [loading]);
+  }, [loading, data]);
 
   const loadSuggestions = value => {
     // Cancel the previous request
