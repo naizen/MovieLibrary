@@ -1,22 +1,18 @@
+require('dotenv').config();
 const { ApolloServer, gql } = require('apollo-server-lambda');
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
+const MovieAPI = require('./datasources/movie');
 
-const resolvers = {
-  Query: {
-    hello: (parent, args, context) => {
-      return 'Hello from graphql!';
-    }
-  }
-};
+const dataSources = () => ({
+  movieAPI: new MovieAPI()
+});
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  dataSources
 });
 
 exports.handler = server.createHandler();

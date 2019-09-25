@@ -1,0 +1,166 @@
+$ph-color: #f3f3f3 !default;
+
+@import '~bootstrap/scss/bootstrap';
+@import '~placeholder-loading/src/scss/placeholder-loading';
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.navbar.shadow {
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+main {
+  padding-top: 56px;
+  padding-bottom: 5em;
+}
+
+.link-normal {
+  color: rgba(0, 0, 0, 0.7);
+  &:hover {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+  }
+}
+
+.carousel-nav-btn {
+  border: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 10px;
+  outline: 0px;
+  opacity: 1;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+  &:disabled svg {
+    opacity: 0.4;
+  }
+}
+
+.modal-backdrop {
+  &.darker {
+    opacity: 0.9;
+  }
+}
+
+.btn-icon {
+  border: none;
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.ratings {
+  color: rgba(255, 255, 255, 0.9);
+  &.ratings-dark {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .rating {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+
+  .rating-num {
+    font-weight: 300;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-left: 5px;
+    small {
+      font-weight: 300;
+    }
+  }
+
+  .tomato-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (min-width: 768px) {
+    .rating {
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+    .rating-num {
+      font-size: 25px;
+    }
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &.ratings-sm {
+    .rating:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    .tomato-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .rating-num {
+      margin-left: 0;
+    }
+
+    @media (min-width: 768px) {
+      .rating:not(:first-child) {
+        margin-left: 10px;
+      }
+      .rating-num {
+        font-size: 20px;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.year {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+
+  &.year-dark {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.page-header {
+  margin-top: 45px;
+}
+
+.ph-item {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.ph-carousel {
+  //margin-top: 1em;
+  .ph-picture {
+    height: 250px;
+  }
+}

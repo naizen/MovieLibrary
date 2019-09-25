@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import './index.css';
-import App from './App';
+import Pages from './pages';
+import './styles/index.scss';
 
 const client = new ApolloClient({
   uri: '/.netlify/functions/graphql'
@@ -11,7 +11,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <Pages />
   </ApolloProvider>,
   document.getElementById('root')
 );
