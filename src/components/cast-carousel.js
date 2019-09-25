@@ -2,6 +2,23 @@ import React from 'react';
 import Carousel from 'nuka-carousel';
 import styled from '@emotion/styled';
 
+const StyledCarousel = styled(Carousel)`
+  .slider-list {
+    cursor: default !important;
+    min-height: 300px;
+  }
+`;
+
+const CastMember = styled('div')`
+  max-width: 150px;
+  cursor: default;
+
+  img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+`;
+
 const getSlidesToShow = () => {
   let slidesToShow = 3;
   if (window.matchMedia('(min-width: 768px)').matches) {
@@ -12,7 +29,6 @@ const getSlidesToShow = () => {
 
 const CastCarousel = ({ cast }) => (
   <StyledCarousel
-    framePadding="0 0 50px 0"
     slidesToShow={getSlidesToShow()}
     slidesToScroll={3}
     cellSpacing={20}
@@ -34,21 +50,5 @@ const CastCarousel = ({ cast }) => (
     ))}
   </StyledCarousel>
 );
-
-const StyledCarousel = styled(Carousel)`
-  .slider-list {
-    cursor: default !important;
-  }
-`;
-
-const CastMember = styled('div')`
-  max-width: 150px;
-  cursor: default;
-
-  img {
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-`;
 
 export default CastCarousel;

@@ -4,6 +4,50 @@ import styled from '@emotion/styled';
 import { Link } from '@reach/router';
 import Trailer from './trailer';
 
+const Poster = styled('div')`
+  position: relative;
+  margin-bottom: 5px;
+`;
+
+const PosterPlay = styled('div')`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PlayButton = styled('button')`
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  svg {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+  }
+  &:focus {
+    outline: 0;
+  }
+
+  transition: visibility 0s, opacity 0.4s linear;
+
+  @media (min-width: 768px) {
+    height: 80px;
+    width: 80px;
+    svg {
+      height: 40px;
+      width: 40px;
+    }
+  }
+`;
+
 class MovieThumbnail extends Component {
   constructor(props) {
     super(props);
@@ -89,49 +133,5 @@ class MovieThumbnail extends Component {
     );
   }
 }
-
-const Poster = styled('div')`
-  position: relative;
-  margin-bottom: 5px;
-`;
-
-const PosterPlay = styled('div')`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const PlayButton = styled('button')`
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  svg {
-    width: 30px;
-    height: 30px;
-    opacity: 0.8;
-  }
-  &:focus {
-    outline: 0;
-  }
-
-  transition: visibility 0s, opacity 0.4s linear;
-
-  @media (min-width: 768px) {
-    height: 80px;
-    width: 80px;
-    svg {
-      height: 40px;
-      width: 40px;
-    }
-  }
-`;
 
 export default MovieThumbnail;
