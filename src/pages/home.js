@@ -10,7 +10,8 @@ export default function Home() {
 
   return (
     <div className="container my-5">
-      <MoviesByCategories categories={categories} />
+      <MoviesByCategories categories={categories.slice(0, 2)} />
+      <MoviesByCategories categories={categories.slice(2, 3)} />
     </div>
   );
 }

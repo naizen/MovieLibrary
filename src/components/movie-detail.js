@@ -24,7 +24,7 @@ const Backdrop = styled('div')`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
   }
   @media (min-width: 992px) {
     padding-top: 20rem;
@@ -99,10 +99,17 @@ class MovieDetail extends Component {
   }
 
   render() {
-    const { movie } = this.props;
+    const { loading, data } = this.props;
     const { showTrailer } = this.state;
 
     let style = {};
+
+    if (loading) {
+      return <PlaceholderLoader />;
+    }
+
+    const movie = data.movie;
+
     if (movie.backdropPath) {
       style.backgroundImage = `url(https://image.tmdb.org/t/p/original${movie.backdropPath})`;
     }
@@ -217,5 +224,24 @@ class MovieDetail extends Component {
     );
   }
 }
+
+const PlaceholderLoader = () => (
+  <div>
+    <Backdrop className="jumbotron">
+      <div className="container">
+        <div className="row">
+          <div className="col-4 col-md-3">
+            <div className="ph-item">
+              <div
+                className="ph-picture"
+                style={{ height: 350, marginBottom: 0 }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Backdrop>
+  </div>
+);
 
 export default MovieDetail;

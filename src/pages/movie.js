@@ -35,8 +35,7 @@ export default function Movie({ movieId }) {
     variables: { id: movieId }
   });
 
-  if (loading) return null;
   if (error) return <p>ERROR</p>;
 
-  return <MovieDetail movie={data.movie} />;
+  return <MovieDetail data={data} loading={loading} />;
 }
