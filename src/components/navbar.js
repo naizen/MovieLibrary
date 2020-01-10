@@ -22,7 +22,7 @@ export default function Navbar() {
                 verticalAlign: 'middle'
               }}
             >
-              Movie Library
+              MovieLibrary
             </span>
           </a>
         </div>
