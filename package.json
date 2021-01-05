@@ -10,7 +10,7 @@
     "apollo-boost": "^0.4.4",
     "apollo-datasource-rest": "^0.6.4",
     "apollo-server-lambda": "^2.9.3",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.1.0",
     "eslint-utils": "^1.4.1",
